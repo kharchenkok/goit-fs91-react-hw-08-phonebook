@@ -51,39 +51,11 @@
   color: white;
 }
 
-.formRadioWrapper {
+.formLinkText{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 8px;
+  gap: 6px;
+  padding: 20px;
+  max-width: fit-content;
 }
 
-.formRadio {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-}
 
-.formRadio:checked + .formRadioColor {
-  border: 2px solid slategrey;
-  transform: scale(1.1);
-}
-.formRadio:hover + .formRadioColor {
-  transform: scale(1.1);
-}
-
-.formRadioColor {
-  display: flex;
-  width: 50px;
-  height: 50px;
-  border: 1px solid currentColor;
-  background-color: currentColor;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: all 200ms linear;
-}

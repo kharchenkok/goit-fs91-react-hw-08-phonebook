@@ -12,11 +12,6 @@ export const fetchContacts = createAsyncThunk('contacts/fetchAll', async () => {
 export const addContact = createAsyncThunk(
   'contacts/addContact',
   async contact => {
-    // const contactWithId = {
-    //   ...contact,
-    //   id: nanoid(), // mockApi adds its own id
-    // };
-    // return await addNewContact(contactWithId);
     return await addNewContact(contact);
   }
 );

@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.userMenu {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  & p {
+    color: #331200;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+
+

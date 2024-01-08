@@ -31,9 +31,6 @@ ul {
   padding: 0 20px;
 }
 
-/*.active{*/
-/*  border: 2px solid red;*/
-/*}*/
 
 .wrapper {
   display: grid;
@@ -42,14 +39,44 @@ ul {
   align-items: start;
 }
 
-.header {
+.logginButton {
+  padding: 8px 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 16px;
+  border: 2px solid #f85771;
+  background-color: #f85771;
+  cursor: pointer;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
+  max-width: fit-content;
+  text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 15px;
+  transition: all 250ms ease-in-out;
 }
+
+.logginButton:hover {
+  background-color: white;
+  color: #f85771;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 2px solid #4CAF50;
+  &:hover {
+    background-color: white;
+    color: #4CAF50;
+  }
+}
+
+
 .pageTitle {
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+.contentCenter{
+  justify-items: center;
 }

@@ -2,15 +2,18 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setNameFilterAction } from '../../store/filter/filterSlice';
-import { filterSelector } from '../../store/filter/filterSelector';
-import { contactsSelectors } from '../../store/contacts/contactsSelectors';
+
+import {
+  contactsSelectors,
+  filterSelector,
+} from '../../store/contacts/contactsSelectors';
 
 import style from './Filter.module.css';
 
 const NameFilter = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(contactsSelectors.sortedContacts);
-  const { nameFilter } = useSelector(filterSelector);
+  const nameFilter = useSelector(filterSelector);
 
   const handleChange = event => {
     dispatch(setNameFilterAction(event.target.value));

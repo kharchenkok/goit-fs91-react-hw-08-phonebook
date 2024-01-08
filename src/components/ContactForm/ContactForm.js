@@ -6,10 +6,6 @@ import {
   showSuccess,
   showWarning,
 } from '../../utils/ToastNotification';
-import {
-  colorPickerOptions,
-  DEFAULT_COLOR,
-} from '../../constans/ColorConstans';
 
 import { addContact } from '../../store/contacts/contactsOperations';
 import { contactsSelectors } from '../../store/contacts/contactsSelectors';
@@ -22,7 +18,7 @@ export default function ContactForm() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const { name, number, color } = event.target;
+    const { name, number } = event.target;
     const existingContact = contacts.find(
       contact => contact.name.toLowerCase() === name.value.toLowerCase()
     );
@@ -37,13 +33,10 @@ export default function ContactForm() {
       return;
     }
 
-    const selectedColor = color.value || DEFAULT_COLOR;
-
     dispatch(
       addContact({
         name: name.value,
         number: number.value,
-        color: selectedColor,
       })
     );
 
@@ -74,23 +67,6 @@ export default function ContactForm() {
         required
         className={style.formInput}
       />
-
-      <div className={style.formRadioWrapper}>
-        {colorPickerOptions.map(({ label, color }) => (
-          <label key={label} className="formLabel">
-            <input
-              type="radio"
-              name="color"
-              value={color}
-              className={style.formRadio}
-            />
-            <span
-              className={style.formRadioColor}
-              style={{ color: color }}
-            ></span>
-          </label>
-        ))}
-      </div>
 
       <button type="submit">Add</button>
     </form>
